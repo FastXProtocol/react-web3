@@ -189,13 +189,14 @@ class Web3Provider extends React.Component {
    * will throw if no account is selected.
    * @return {String}
    */
-  async getAccounts() {
+  getAccounts() {
     try {
       const { web3 } = window;
       // throws if no account selected
-      const accounts = await web3.eth.getAccounts();
-
-      return accounts;
+      web3.eth.getAccounts((err, accounts) => {
+        if (err) return []
+        return accounts;
+      })
     } catch (e) {
       return [];
     }
