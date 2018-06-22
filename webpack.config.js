@@ -1,7 +1,7 @@
 var nodeExternals = require('webpack-node-externals');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: ['babel-polyfill','./src/index.js'],
   output: {
     filename: './dist/index.js',
     libraryTarget: 'commonjs2'

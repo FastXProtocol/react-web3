@@ -193,7 +193,7 @@ class Web3Provider extends React.Component {
     try {
       const { web3 } = window;
       // throws if no account selected
-      const accounts = await web3.eth.getAccounts();;
+      const accounts = await web3.eth.getAccounts();
 
       return accounts;
     } catch (e) {
